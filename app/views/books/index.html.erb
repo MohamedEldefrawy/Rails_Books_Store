@@ -2,7 +2,7 @@
 <ul>
   <% @books.each do |book| %>
     <li>
-      <%= book.name %>
+      <%= link_to book.name, book %>
     </li>
     <li>
       <%= book.photo %>
@@ -12,11 +12,6 @@
     </li>
     <li>
       <%= book.created_at %>
-    </li>
-    <li>
-      <a href="/books/<%= book.id %>">
-        Show
-      </a>
     </li>
   <% end %>
 </ul>
