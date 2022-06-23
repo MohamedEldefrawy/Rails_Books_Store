@@ -1,0 +1,29 @@
+<%= form_with model: book do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% book.errors.full_messages_for(:name).each do |message| %>
+      <div style="color: red"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :photo %><br>
+    <%= form.text_area :photo %>
+    <% book.errors.full_messages_for(:photo).each do |message| %>
+      <div style="color: red"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :describtion %><br>
+    <%= form.text_area :describtion %>
+    <% book.errors.full_messages_for(:describtion).each do |message| %>
+      <div style="color: red"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
