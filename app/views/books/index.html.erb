@@ -1,2 +1,17 @@
 <h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.name %>
+    </li>
+    <li>
+      <%= book.photo %>
+    </li>
+    <li>
+      <%= book.describtion %>
+    </li>
+    <li>
+      <%= book.created_at %>
+    </li>
+  <% end %>
+</ul>
