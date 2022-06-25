@@ -7,7 +7,9 @@
       <%= link_to book.name, book %>
     </li>
     <li>
-      <%= book.photo %>
+      <% if book.photo.attached? %>
+        <%= image_tag book.photo %>
+      <% end %>
     </li>
     <li>
       <%= book.describtion %>

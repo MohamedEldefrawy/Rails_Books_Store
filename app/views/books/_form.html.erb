@@ -9,7 +9,10 @@
 
   <div>
     <%= form.label :photo %><br>
-    <%= form.text_area :photo %>
+    <% if book.photo.attached? %>
+      <%= image_tag book.photo %>
+    <% end %>
+    <%= form.file_field :photo %><br>
     <% book.errors.full_messages_for(:photo).each do |message| %>
       <div style="color: red"><%= message %></div>
     <% end %>
