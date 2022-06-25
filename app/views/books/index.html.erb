@@ -1,4 +1,5 @@
 <h1>Books#index</h1>
+
 <ul>
   <% @books.each do |book| %>
     <li>
@@ -15,5 +16,14 @@
     </li>
   <% end %>
 </ul>
-<%= link_to "New Book", new_book_path %>
+<% if current_user %>
+  <%= link_to "New Book", new_book_path, method: :get %>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Register", new_user_registration_path, method: :get %>
+  <%= link_to "Login", new_user_session_path, method: :get %>
+<% end %>
+
+
+
 
