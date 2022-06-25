@@ -2,7 +2,9 @@
 <ul>
   <li><%= @book.created_at %></li>
   <li><%= @book.describtion %></li>
-  <li><%= link_to "Edit", edit_book_path(@book) %></li>
+  <% if current_user && current_user.admin %>
+    <li><%= link_to "Edit", edit_book_path(@book) %></li>
 
-  <li><%= button_to "Delete", book_path(@book), method: :delete %></li>
+    <li><%= button_to "Delete", book_path(@book), method: :delete %></li>
+  <% end %>
 </ul>
